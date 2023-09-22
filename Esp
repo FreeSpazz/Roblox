@@ -1,1 +1,25 @@
+local Character = game.Players.LocalPlayer.Character
 
+-- Create a new highlight instance
+local Highlight = Instance.new("Highlight")
+
+-- Set the highlight's fill color
+Highlight.FillColor = Color3.new(1, 0, 0)
+
+-- Parent the highlight to the player's character
+Highlight.Parent = Character
+
+-- Create a loop to highlight the player every 1 second
+while true do
+  -- Wait for 1 second
+  task.wait(1)
+
+  -- Check if the player's character still exists
+  if Character ~= nil then
+    -- Set the highlight's visibility to true
+    Highlight.Visible = true
+  else
+    -- Set the highlight's visibility to false
+    Highlight.Visible = false
+  end
+end
