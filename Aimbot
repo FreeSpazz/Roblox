@@ -1,0 +1,20 @@
+-- Get the player to lock onto
+local TargetPlayer = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+
+-- Create a new camera instance
+local Camera = Instance.new("Camera")
+
+-- Set the camera's parent to the player's character
+Camera.Parent = game.Players.LocalPlayer.Character
+
+-- Set the camera's CFrame to the target player's CFrame
+Camera.CFrame = TargetPlayer.CFrame
+
+-- Create a loop to keep the camera locked onto the target player
+while true do
+  -- Wait for a small amount of time
+  task.wait(0.01)
+
+  -- Set the camera's CFrame to the target player's CFrame
+  Camera.CFrame = TargetPlayer.CFrame
+end
